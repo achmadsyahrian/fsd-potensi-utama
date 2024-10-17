@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class AcademicController extends Controller
 {
-    public function engineering() {
-        $title = "Teknik Industri";
+    public function dkv() {
+        $title = "Desain Komunikasi Visual";
         
         $latestPosts = Post::where('type', 'news')
             ->where('is_published', 1)
@@ -23,11 +23,11 @@ class AcademicController extends Controller
             ->take(3)
             ->get();
 
-        return view('landing.academic.engineering', compact('latestPosts', 'title'));
+        return view('landing.academic.dkv', compact('latestPosts', 'title'));
     }
 
-    public function informatics() {
-        $title = "Informatika";
+    public function ftv() {
+        $title = "Televisi & Film";
         
         $latestPosts = Post::where('type', 'news')
             ->where('is_published', 1)
@@ -41,11 +41,11 @@ class AcademicController extends Controller
             ->take(3)
             ->get();
 
-        return view('landing.academic.informatics', compact('latestPosts', 'title'));
+        return view('landing.academic.ftv', compact('latestPosts', 'title'));
     }
 
-    public function systems1() {
-        $title = "Sistem Informasi S1";
+    public function interior() {
+        $title = "Desain Interior";
         
         $latestPosts = Post::where('type', 'news')
             ->where('is_published', 1)
@@ -59,43 +59,7 @@ class AcademicController extends Controller
             ->take(3)
             ->get();
 
-        return view('landing.academic.systems1', compact('latestPosts', 'title'));
+        return view('landing.academic.interior', compact('latestPosts', 'title'));
     }
 
-    public function systemd3() {
-        $title = "Sistem Informasi D3";
-        
-        $latestPosts = Post::where('type', 'news')
-            ->where('is_published', 1)
-            ->where(function ($query) {
-                $query->where('category_id', 4)
-                    ->orWhereHas('tags', function ($query) {
-                        $query->where('tags.id', 4);
-                    });
-            })
-            ->orderBy('created_at', 'desc')
-            ->take(3)
-            ->get();
-
-        return view('landing.academic.systemd3', compact('latestPosts', 'title'));
-    }
-
-    public function computerScience() {
-        $title = "Ilmu Komputer S2";
-        
-        $latestPosts = Post::where('type', 'news')
-            ->where('is_published', 1)
-            ->where(function ($query) {
-                $query->where('category_id', 5)
-                    ->orWhereHas('tags', function ($query) {
-                        $query->where('tags.id', 5);
-                    });
-            })
-            ->orderBy('created_at', 'desc')
-            ->take(3)
-            ->get();
-
-        return view('landing.academic.computerScience', compact('latestPosts', 'title'));
-    }
-    
 }

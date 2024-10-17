@@ -27,41 +27,23 @@ class GenerateSitemap extends Command
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
-            // Teknik Industri
-            ->add(Url::create('/teknik-industri')
+            // Desain Komunikasi Visual
+            ->add(Url::create('/program-studi/desain-komunikasi-visual')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
-            // Informatika
-            ->add(Url::create('/informatika')
+            // Televisi & Film
+            ->add(Url::create('/program-studi/ftv')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
-            // Sistem Informasi S1
-            ->add(Url::create('/sistem-informasi-s1')
+            // Desain Interior
+            ->add(Url::create('/program-studi/desain-interior')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
-            )
-            // Sistem Informasi D3
-            ->add(Url::create('/sistem-informasi-d3')
-                ->setLastModificationDate(now())
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                ->setPriority(0.8)
-            )
-            // Teknik Industri
-            ->add(Url::create('/teknik-industri')
-                ->setLastModificationDate(now())
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                ->setPriority(0.8)
-            )
-            // Ilmu Komputer S2
-            ->add(Url::create('/ilmu-komputer-s2')
-                ->setLastModificationDate(now())
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                ->setPriority(0.9)
             )
             // Pengumuman
             ->add(Url::create('/pengumuman')

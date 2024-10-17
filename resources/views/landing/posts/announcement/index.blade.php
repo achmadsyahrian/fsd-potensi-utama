@@ -3,12 +3,12 @@
 {{-- Head --}}
 @section('title', $title . ' - ' . env('APP_NAME'))
 @section('meta_description', 'Baca pengumuman informasi terbaru dari '.env('APP_NAME').' Universitas Potensi Utama. Informasi fakultas terkini, aktivitas fakultas, dan prestasi mahasiswa kami.')
-@section('meta_keywords', 'pengumuman fakultas teknik & ilmu komputer upu, pengumuman fakultas teknik & ilmu komputer potensi utama, pengumuman pendidikan fakultas teknik & ilmu komputer, pengumuman ftik upu')
+@section('meta_keywords', 'pengumuman fakultas seni & desain upu, pengumuman fakultas seni & desain potensi utama, pengumuman pendidikan fakultas seni & desain, pengumuman fsd upu')
 @section('canonical', env('APP_URL').'/pengumuman')
 
 
 @section('content')
-    <div class="catagory-featured-post bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/fakultas-img/visi-misi-header.jpg')}})">
+    <div class="catagory-featured-post bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/building-img/gedung-b.jpg')}})">
         <div class="container-fluid h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-lg-9">

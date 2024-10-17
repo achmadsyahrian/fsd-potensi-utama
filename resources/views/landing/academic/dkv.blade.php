@@ -1,8 +1,8 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Ilmu Komputer S2 - '. env('APP_NAME'))
-@section('meta_description', 'Program Studi Ilmu Komputer S2 - '. env('APP_NAME'))
-@section('meta_keywords', 'ilmu komputer s2 upu, ilmu komputer s2 potensi utama, visi misi ilmu komputer s2 upu, berita ilmu komputer s2 potensi utama')
+@section('title', 'Program Studi Teknik Industri - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Teknik Industri - '. env('APP_NAME'))
+@section('meta_keywords', 'Teknik Industri upu, teknik industri potensi utama, visi misi teknik industri upu, berita teknik industri potensi utama')
 @section('canonical', env('APP_URL').'/program-studi/akuntansi')
 @section('content')
 
@@ -10,7 +10,7 @@
 
     <!-- ##### Post Details Title Area Start ##### -->
     <div class="post-details-title-area bg-overlay clearfix"
-        style="background-image: url({{ asset('landing/assets/img/building-img/gedung-upu.jpg') }})">
+        style="background-image: url({{ asset('landing/assets/img/building-img/gedung-b.jpg') }})">
         <div class="container-fluid h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-lg-8">

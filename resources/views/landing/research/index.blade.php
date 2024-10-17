@@ -2,7 +2,7 @@
 {{-- Head --}}
 @section('title', 'Penelitian - '. env('APP_NAME'))
 @section('meta_description', env('APP_NAME').' Universitas Potensi Utama aktif dalam penelitian yang mendorong inovasi di bidang ilmu psikologi, berkontribusi pada perkembangan akademik dan industri')
-@section('meta_keywords', 'penelitian teknik & ilmu komputer upu, penelitian teknik & ilmu komputer potensi utama, penelitian teknik & ilmu komputer, penelitian teknik & ilmu komputer potensi utama')
+@section('meta_keywords', 'penelitian seni & desain upu, penelitian seni & desain potensi utama, penelitian seni & desain, penelitian seni & desain potensi utama')
 @section('canonical', env('APP_URL').'/penelitian')
 
 @section('content')
@@ -10,7 +10,7 @@
     @include('landing.partials.breaking-news')
 
     <!-- ##### Post Details Title Area Start ##### -->
-    <div class="post-details-title-area bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/building-img/gedung-upu.jpg')}})">
+    <div class="post-details-title-area bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/building-img/gedung-b.jpg')}})">
         <div class="container-fluid h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-lg-8">

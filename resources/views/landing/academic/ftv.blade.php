@@ -1,8 +1,8 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Sistem Informasi S1 - '. env('APP_NAME'))
-@section('meta_description', 'Program Studi Sistem Informasi S1 - '. env('APP_NAME'))
-@section('meta_keywords', 'sistem informasi s1 upu, sistem informasi s1 potensi utama, visi misi sistem informasi s1 upu, berita sistem informasi s1 potensi utama')
+@section('title', 'Program Studi Informatika - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Informatika - '. env('APP_NAME'))
+@section('meta_keywords', 'informatika upu, informatika potensi utama, visi misi informatika upu, berita informatika potensi utama')
 @section('canonical', env('APP_URL').'/program-studi/akuntansi')
 @section('content')
 
@@ -10,7 +10,7 @@
 
     <!-- ##### Post Details Title Area Start ##### -->
     <div class="post-details-title-area bg-overlay clearfix"
-        style="background-image: url({{ asset('landing/assets/img/building-img/gedung-upu.jpg') }})">
+        style="background-image: url({{ asset('landing/assets/img/building-img/gedung-b.jpg') }})">
         <div class="container-fluid h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-lg-8">

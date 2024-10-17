@@ -224,10 +224,10 @@ img {
     transform: translate(19px, 0); } }
 /* :: 3.5.0 Miscellaneous */
 .tooltip-inner {
-  background-color: #e58800; }
+  background-color: #96c95c; }
 
 .tooltip .arrow::before {
-  border-top-color: #e58800; }
+  border-top-color: #96c95c; }
 
 .bg-img {
   background-position: center center;
@@ -290,12 +290,12 @@ img {
       right: 30px;
       bottom: 30px; } }
   #scrollUp:hover {
-    background-color: #e58800;
+    background-color: #96c95c;
     color: #ffffff; }
 
 /* :: 3.7.0 Newsbox Button */
 .newsbox-btn {
-  background-color: #e58800;
+  background-color: #96c95c;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
   position: relative;
@@ -319,13 +319,13 @@ img {
     background-color: #2f2f2f;
     color: #ffffff; }
     .newsbox-btn.btn-2:hover, .newsbox-btn.btn-2:focus {
-      background-color: #e58800;
+      background-color: #96c95c;
       color: #ffffff; }
   .newsbox-btn.btn-3 {
     background-color: #0b87d6;
     color: #ffffff; }
     .newsbox-btn.btn-3:hover, .newsbox-btn.btn-3:focus {
-      background-color: #e58800;
+      background-color: #96c95c;
       color: #ffffff; }
 
 /* :: 4.0 Header Area CSS */
@@ -364,7 +364,7 @@ img {
         padding: 0 10px;
         color: #404040; }
         .header-area .newsbox-main-menu .classy-navbar .classynav ul li a:hover, .header-area .newsbox-main-menu .classy-navbar .classynav ul li a:focus {
-          color: #e58800; }
+          color: #96c95c; }
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .header-area .newsbox-main-menu .classy-navbar .classynav ul li a {
             font-size: 13px;
@@ -414,7 +414,7 @@ img {
       flex: 0 0 180px;
       max-width: 180px;
       width: 180px;
-      background-color: #e58800;
+      background-color: #96c95c;
       height: 55px; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
         .breaking-news-area .breaking-news-ticker .title {
@@ -493,7 +493,7 @@ img {
               .breaking-news-area .breaking-news-ticker .ticker ul li a {
                 font-size: 12px; } }
             .breaking-news-area .breaking-news-ticker .ticker ul li a:hover, .breaking-news-area .breaking-news-ticker .ticker ul li a:focus {
-              color: #e58800; }
+              color: #96c95c; }
 
 /* :: 6.0 Hero Area CSS */
 .hero-area {
@@ -557,7 +557,7 @@ img {
           font-size: 15px;
           padding: 0 20px; } }
       .footer-area .footer-nav li a:hover, .footer-area .footer-nav li a:focus {
-        color: #e58800; }
+        color: #96c95c; }
   .footer-area .footer-social-info {
     position: relative;
     z-index: 1;
@@ -579,7 +579,7 @@ img {
       font-size: 12px;
       font-weight: 500; }
       .footer-area .copywrite-text a:hover, .footer-area .copywrite-text a:focus {
-        color: #e58800; }
+        color: #96c95c; }
 
 /* :: 8.0 Footer Add Area */
 .big-add-area {
@@ -639,7 +639,7 @@ img {
         .single-blog-post.style-1 .blog-content .post-title {
           font-size: 16px; } }
       .single-blog-post.style-1 .blog-content .post-title:hover, .single-blog-post.style-1 .blog-content .post-title:focus {
-        color: #e58800; }
+        color: #96c95c; }
   .single-blog-post.style-1:hover .blog-thumbnail img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
@@ -661,7 +661,7 @@ img {
       margin-bottom: 10px;
       color: #232323; }
       .single-blog-post.style-2 .blog-content .post-title:hover, .single-blog-post.style-2 .blog-content .post-title:focus {
-        color: #e58800; }
+        color: #96c95c; }
     .single-blog-post.style-2 .blog-content .post-author {
       display: block;
       font-size: 12px;
@@ -670,12 +670,12 @@ img {
       -webkit-transition-duration: 500ms;
       transition-duration: 500ms; }
       .single-blog-post.style-2 .blog-content .post-author:hover, .single-blog-post.style-2 .blog-content .post-author:focus {
-        color: #e58800; }
+        color: #96c95c; }
   .single-blog-post.style-2:hover {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px); }
     .single-blog-post.style-2:hover .blog-content .post-title {
-      color: #e58800; }
+      color: #96c95c; }
   .single-blog-post.style-3 .blog-thumbnail {
     margin-bottom: 20px;
     position: relative;
@@ -690,7 +690,7 @@ img {
       transform: translate(-50%, -50%);
       width: 63px;
       height: 63px;
-      background-color: #e58800;
+      background-color: #96c95c;
       color: #ffffff;
       font-size: 24px;
       line-height: 63px;
@@ -724,7 +724,7 @@ img {
         .single-blog-post.style-3 .blog-content .post-title {
           font-size: 18px; } }
       .single-blog-post.style-3 .blog-content .post-title:hover, .single-blog-post.style-3 .blog-content .post-title:focus {
-        color: #e58800; }
+        color: #96c95c; }
     .single-blog-post.style-3 .blog-content .post-author {
       display: block;
       font-size: 12px;
@@ -733,9 +733,9 @@ img {
       transition-duration: 500ms;
       font-weight: 500; }
       .single-blog-post.style-3 .blog-content .post-author:hover, .single-blog-post.style-3 .blog-content .post-author:focus {
-        color: #e58800; }
+        color: #96c95c; }
   .single-blog-post.style-3:hover .blog-content .post-title {
-    color: #e58800; }
+    color: #96c95c; }
   .single-blog-post.style-4 .blog-thumbnail {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 120px;
@@ -764,9 +764,9 @@ img {
       transition-duration: 500ms; }
       .single-blog-post.style-4 .blog-content .post-title:hover, .single-blog-post.style-4 .blog-content .post-title:focus {
         font-weight: 600;
-        color: #e58800; }
+        color: #96c95c; }
   .single-blog-post.style-4:hover .blog-content .post-title {
-    color: #e58800; }
+    color: #96c95c; }
   .single-blog-post.style-5 .blog-thumbnail {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 45%;
@@ -819,7 +819,7 @@ img {
           font-size: 18px; } }
       .single-blog-post.style-5 .blog-content .post-title:hover, .single-blog-post.style-5 .blog-content .post-title:focus {
         font-weight: 600;
-        color: #e58800; }
+        color: #96c95c; }
     .single-blog-post.style-5 .blog-content .post-author {
       font-size: 12px;
       color: #636363;
@@ -828,7 +828,7 @@ img {
       transition-duration: 500ms;
       display: block; }
   .single-blog-post.style-5:hover .blog-content .post-title {
-    color: #e58800; }
+    color: #96c95c; }
   .single-blog-post.style-6 .blog-thumbnail {
     margin-bottom: 20px;
     position: relative;
@@ -843,7 +843,7 @@ img {
       transform: translate(-50%, -50%);
       width: 44px;
       height: 44px;
-      background-color: #e58800;
+      background-color: #96c95c;
       color: #ffffff;
       font-size: 18px;
       line-height: 44px;
@@ -875,9 +875,9 @@ img {
       line-height: 1.3; }
       .single-blog-post.style-6 .blog-content .post-title:hover, .single-blog-post.style-6 .blog-content .post-title:focus {
         font-weight: 600;
-        color: #e58800; }
+        color: #96c95c; }
   .single-blog-post.style-6:hover .blog-content .post-title {
-    color: #e58800; }
+    color: #96c95c; }
 
 .sidebar-area {
   position: relative;
@@ -947,7 +947,7 @@ img {
       line-height: 32px;
       background-color: transparent; }
       .intro-news-filter .nav-tabs .nav-link.active {
-        color: #e58800; }
+        color: #96c95c; }
       @media only screen and (min-width: 480px) and (max-width: 767px) {
         .intro-news-filter .nav-tabs .nav-link {
           padding: 0 8px; } }
@@ -1000,7 +1000,7 @@ img {
       .catagory-featured-post .post-content a {
         font-size: 24px; } }
     .catagory-featured-post .post-content a:hover, .catagory-featured-post .post-content a:focus {
-      color: #e58800; }
+      color: #96c95c; }
   .catagory-featured-post .post-content p {
     color: #ffffff;
     font-size: 15px; }
@@ -1201,7 +1201,7 @@ img {
       .comment_area .comment-content .comment-meta .post-author:hover,
       .comment_area .comment-content .comment-meta .post-date:hover,
       .comment_area .comment-content .comment-meta .reply:hover {
-        color: #e58800; }
+        color: #96c95c; }
     .comment_area .comment-content .comment-meta .reply {
       margin-right: 0; }
       .comment_area .comment-content .comment-meta .reply::after {
@@ -1228,7 +1228,7 @@ img {
   .featured-video-area .video-btn {
     width: 63px;
     height: 63px;
-    background-color: #e58800;
+    background-color: #96c95c;
     color: #ffffff;
     font-size: 24px;
     line-height: 63px;
@@ -1256,7 +1256,7 @@ img {
 .video-slideshow {
   position: relative;
   z-index: 5;
-  border-top: 2px solid #e58800; /*warna*/ 
+  border-top: 2px solid #96c95c; /*warna*/ 
 }
   .video-slideshow::after {
     position: absolute;
@@ -1281,7 +1281,7 @@ img {
     margin-top: -20px;
     font-size: 18px;
     color: #ffffff;
-    background-color: #e58800;
+    background-color: #96c95c;
     left: -20px;
     text-align: center;
     -webkit-transition-duration: 500ms;
@@ -1318,7 +1318,7 @@ img {
     font-size: 14px;
     color: #000000; }
     .contact-content .contact-social-info a:hover, .contact-content .contact-social-info a:focus {
-      color: #e58800; }
+      color: #96c95c; }
   .contact-content .single-contact-info {
     position: relative;
     margin-bottom: 20px; }
@@ -1414,7 +1414,7 @@ img {
 .single-accordion h6 {
   margin-bottom: 0; }
   .single-accordion h6 a {
-    background-color: #e58800; /*warna*/
+    background-color: #96c95c; /*warna*/
     border-radius: 0;
     color: #ffffff;
     display: block;
@@ -1535,12 +1535,12 @@ img {
 }
 
 .status-color {
-  background-color: #e58800;
+  background-color: #96c95c;
   color: white;
 }
 
 .pagination .page-link:hover {
-  background-color: #e58800; /* Hijau saat dihover */
+  background-color: #96c95c; /* Hijau saat dihover */
   color: white; /* Teks berubah menjadi putih */
 }
 
@@ -1558,7 +1558,7 @@ img {
 }
 
 .category-item:hover {
-  background-color: #e58800; 
+  background-color: #96c95c; 
   font-size: 12px;
   cursor:pointer;
   color: white;
@@ -1582,7 +1582,7 @@ img {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #e58800;
+  background-color: #96c95c;
   opacity: 0.9;
   color: #fff;
   padding: 5px 10px;

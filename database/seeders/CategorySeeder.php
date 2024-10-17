@@ -15,28 +15,18 @@ class CategorySeeder extends Seeder
     {
         // Menambahkan Kategori Default
         Category::create([
-            'name' => 'Teknik Industri',
-            'slug' => 'teknik-industri',
+            'name' => 'Desain Komunikasi Visual',
+            'slug' => 'desain-komunikasi-visual',
         ]);
 
         Category::create([
-            'name' => 'Informatika',
-            'slug' => 'informatika',
+            'name' => 'Televisi & Film',
+            'slug' => 'ftv',
         ]);
 
         Category::create([
-            'name' => 'Sistem Informasi S1',
-            'slug' => 'sistem-informasi-s1',
-        ]);
-
-        Category::create([
-            'name' => 'Sistem Informasi D3',
-            'slug' => 'sistem-informasi-d3',
-        ]);
-
-        Category::create([
-            'name' => 'Ilmu Komputer S2',
-            'slug' => 'ilmu-komputer-s2',
+            'name' => 'Desain Interior',
+            'slug' => 'desain-interior',
         ]);
         
         Category::create([
