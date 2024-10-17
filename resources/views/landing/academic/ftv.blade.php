@@ -1,9 +1,12 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Informatika - '. env('APP_NAME'))
-@section('meta_description', 'Program Studi Informatika - '. env('APP_NAME'))
-@section('meta_keywords', 'informatika upu, informatika potensi utama, visi misi informatika upu, berita informatika potensi utama')
-@section('canonical', env('APP_URL').'/program-studi/akuntansi')
+@section('title', 'Program Studi Film & Televisi - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Film & Televisi - '. env('APP_NAME'))
+@section('meta_keywords', 'ftv upu, ftv potensi utama, visi misi ftv upu, berita ftv potensi utama')
+@section('canonical', env('APP_URL').'/program-studi/ftv')
+@section('json-ld')
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "EducationalOrganization","name": "Film & Televisi","url": "{{env('APP_URL')}}/program-studi/ftv","address": {"@type": "PostalAddress","addressLocality": "Medan","addressRegion": "Sumatera Utara","postalCode": "20241","streetAddress": "Jl. K.L Yos Sudarso, Gg. Famili No.247, Tj. Mulia, Kec. Medan Deli" },"department": {"@type": "EducationalOrganization","name": "{{env('APP_NAME')}}","url": "{{env('APP_URL')}}"}}</script>
+@endsection
 @section('content')
 
    @include('landing.partials.breaking-news')

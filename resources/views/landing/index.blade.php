@@ -1,5 +1,8 @@
 @extends('landing.layouts.app')
 @section('title', 'Beranda - '. env('APP_NAME') .' | Universitas Potensi Utama')
+@section('json-ld')
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"{{ env('APP_NAME') }}","url":"{{ env('APP_URL') }}","address":{"@type":"PostalAddress","addressLocality":"Medan","addressRegion":"Sumatera Utara","postalCode":"20241","streetAddress":"Jl. K.L Yos Sudarso, Gg. Famili No.247, Tj. Mulia, Kec. Medan Deli"}}</script> 
+@endsection
 @section('content')
 
     @include('landing.partials.breaking-news')

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{asset('landing/assets/style.css')}}">
 
     <script src="https://kit.fontawesome.com/23dde1eb1b.js" crossorigin="anonymous"></script>
-
+    @yield('json-ld')
 </head>
 
 <body>

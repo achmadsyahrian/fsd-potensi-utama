@@ -27,7 +27,7 @@ class AcademicController extends Controller
     }
 
     public function ftv() {
-        $title = "Televisi & Film";
+        $title = "Film & Televisi";
         
         $latestPosts = Post::where('type', 'news')
             ->where('is_published', 1)

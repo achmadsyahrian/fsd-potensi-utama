@@ -1,9 +1,12 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Sistem Informasi S1 - '. env('APP_NAME'))
-@section('meta_description', 'Program Studi Sistem Informasi S1 - '. env('APP_NAME'))
-@section('meta_keywords', 'sistem informasi s1 upu, sistem informasi s1 potensi utama, visi misi sistem informasi s1 upu, berita sistem informasi s1 potensi utama')
-@section('canonical', env('APP_URL').'/program-studi/akuntansi')
+@section('title', 'Program Studi Desain Interior - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Desain Interior - '. env('APP_NAME'))
+@section('meta_keywords', 'desain interior upu, desain interior potensi utama, visi misi desain interior upu, berita desain interior potensi utama')
+@section('canonical', env('APP_URL').'/program-studi/desain-interior')
+@section('json-ld')
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "EducationalOrganization","name": "Desain Interior","url": "{{env('APP_URL')}}/program-studi/desain-interior","address": {"@type": "PostalAddress","addressLocality": "Medan","addressRegion": "Sumatera Utara","postalCode": "20241","streetAddress": "Jl. K.L Yos Sudarso, Gg. Famili No.247, Tj. Mulia, Kec. Medan Deli" },"department": {"@type": "EducationalOrganization","name": "{{env('APP_NAME')}}","url": "{{env('APP_URL')}}"}}</script>
+@endsection
 @section('content')
 
    @include('landing.partials.breaking-news')
