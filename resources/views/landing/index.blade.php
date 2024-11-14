@@ -36,7 +36,7 @@
                                     <!-- Blog Content -->
                                     <div class="blog-content">
                                         <span class="post-date">{{ $latestNews[0]->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $latestNews[0]->slug)}}" class="post-title">{{ $latestNews[0]->title }}</a>
+                                        <a href="{{route('landing.news.show', $latestNews[0]->slug)}}" class="post-title">{{ \Illuminate\Support\Str::limit($latestNews[0]->title, 80, '...') }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                     <!-- Blog Content -->
                                     <div class="blog-content">
                                         <span class="post-date">{{ $latestNews[1]->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $latestNews[1]->slug)}}" class="post-title">{{ $latestNews[1]->title }}</a>
+                                        <a href="{{route('landing.news.show', $latestNews[1]->slug)}}" class="post-title">{{ \Illuminate\Support\Str::limit($latestNews[1]->title, 80, '...') }}</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog Post Area -->
@@ -83,7 +83,7 @@
                                     <!-- Blog Content -->
                                     <div class="blog-content">
                                         <span class="post-date">{{ $latestNews[2]->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $latestNews[2]->slug)}}" class="post-title">{{ $latestNews[2]->title }}</a>
+                                        <a href="{{route('landing.news.show', $latestNews[2]->slug)}}" class="post-title">{{ \Illuminate\Support\Str::limit($latestNews[2]->title, 80, '...') }}</a>
                                     </div>
                                 </div>
                             </div>

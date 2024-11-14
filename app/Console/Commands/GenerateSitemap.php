@@ -56,6 +56,12 @@ class GenerateSitemap extends Command
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
+            )
+            // Administrasi
+            ->add(Url::create('/administrasi')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setPriority(0.8)
             );
 
         // Get all posts and filter by type

@@ -16,7 +16,7 @@
                     <!-- Post Content -->
                     <div class="post-content">
                         <p class="tag"><span>Pengumuman</span></p>
-                        <h1 class="post-title">{{$post->title}}</h1>
+                        <h1 class="post-title detail-title">{{$post->title}}</h1>
                         <div class="d-flex align-items-center">
                             <span class="post-date mr-30">{{ $post->created_at->format('M j, Y') }}</span>
                             <span class="post-date">By {{$post->user->name}}</span>

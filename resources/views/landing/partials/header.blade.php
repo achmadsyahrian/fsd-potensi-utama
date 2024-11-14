@@ -50,7 +50,7 @@
 
                             <!-- Header Add Area -->
                             <div class="header-add-area">
-                                <a href="#">
+                                <a href="https://pendaftaran.potensi-utama.ac.id/">
                                     <img src="{{asset('landing/assets/img/ads-img/banner-top-header.jpg')}}" style="width: 320px; height:80px; object-fit:contain;" alt="Penerimaan Mahasiswa Baru 2024/2025 Universitass Potensi Utama">
                                 </a>
                             </div>

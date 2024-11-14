@@ -1615,5 +1615,11 @@ img {
   color: blue; /* Menggunakan warna default browser */
   text-decoration: underline; /* Mengatur underline default */
 }
-
+/* Detail title */
+.detail-title {
+  font-size: clamp(1.5rem, 4vw, 3rem) !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
 /*# sourceMappingURL=style.css.map */

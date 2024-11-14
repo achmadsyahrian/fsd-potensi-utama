@@ -1,7 +1,7 @@
 <footer class="footer-area mt-30">
     <!-- Footer Logo -->
     <div class="footer-logo mb-100">
-        <a href="index.html"><img src="{{asset('landing/assets/img/logo-img/logo-fakultas.png')}}" style="width: 300px; object-fit:contain;" alt="{{env('APP_NAME')}}"></a>
+        <a href="{{route('landing.home')}}"><img src="{{asset('landing/assets/img/logo-img/logo-fakultas.png')}}" style="width: 300px; object-fit:contain;" alt="{{env('APP_NAME')}}"></a>
     </div>
     <!-- Footer Content -->
     <div class="container">
