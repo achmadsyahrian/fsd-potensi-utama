@@ -41,13 +41,10 @@
                                 <div class="col-10">
                                     <h3 class="h1">Selamat Datang, {{ $currentUser->name }} 👋</h3>
                                     <div class="markdown text-muted">
-                                        Selamat datang di dashboard utama {{env('APP_NAME')}}. Di sini Anda dapat
-                                        mengakses semua fitur penting dan informasi terbaru mengenai fakultas, dan
-                                        lainnya. Untuk informasi lebih lanjut, kunjungi situs resmi kami !
+                                        Selamat datang di dashboard utama {{env('APP_NAME')}}. Di sini Anda dapat mengakses semua fitur penting dan informasi terbaru mengenai fakultas, serta berbagai layanan lainnya. Untuk informasi lebih lanjut, Anda dapat mengunduh buku panduan penggunaan website kami melalui tombol di bawah ini.
                                     </div>
                                     <div class="mt-3">
-                                        <a href="{{ route('landing.home') }}" class="btn btn-primary" target="_blank"
-                                            rel="noopener">Kunjungi Situs</a>
+                                        <a href="{{asset('admin/file/ManualBook_Web_Universitas_Potensi_Utama.pdf')}}" class="btn btn-primary" download rel="noopener">Unduh Panduan</a>
                                     </div>
                                 </div>
                             </div>

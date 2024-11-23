@@ -119,7 +119,7 @@
                     <div class="col-lg-6">
                         <div class="card mt-5">
                             <div class="card-header">
-                                <div class="form-label required">Thumbnail</div>
+                                <div class="form-label">Thumbnail</div>
                             </div>
                             <div class="card-body">
                                 <div class="row g-3 mt-1">

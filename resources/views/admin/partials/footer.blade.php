@@ -10,7 +10,7 @@
                 <ul class="list-inline list-inline-dots mb-0">
                     <li class="list-inline-item">
                         Copyright &copy; 2024
-                        <a href="." class="link-secondary">Achmad Syahrian</a>.
+                        <a href="http://potensi-utama.ac.id/" class="link-secondary">Universitas Potensi Utama</a>.
                         All rights reserved.
                     </li>
                 </ul>
