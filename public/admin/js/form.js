@@ -175,18 +175,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             }
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.url) {
-                attachment.setAttributes({ url: data.url });
-            } else {
+        .then(response => response.json().then(data => ({ status: response.status, body: data })))
+        .then(({ status, body }) => {
+            if (status === 200 && body.url) {
+                attachment.setAttributes({ url: body.url });
+            } else if (status === 422 && body.errors) {
+                // Validasi gagal
+                alert('Gagal mengunggah file: ' + Object.values(body.errors).flat().join('\n'));
                 attachment.remove();
-                alert('Gagal mengunggah file. Pastikan Anda hanya mengunggah gambar.');
+            } else {
+                alert('Terjadi kesalahan saat mengunggah file.');
+                attachment.remove();
             }
         })
         .catch(() => {
+            alert('Gagal mengunggah file. Pastikan Anda hanya mengunggah gambar atau video yang sesuai.');
             attachment.remove();
-            alert('Gagal mengunggah file. Pastikan Anda hanya mengunggah gambar.');
         });
     }
 });

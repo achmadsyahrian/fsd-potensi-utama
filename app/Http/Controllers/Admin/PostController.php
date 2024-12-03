@@ -285,15 +285,24 @@ class PostController extends Controller
 
     public function upload(Request $request)
     {
-        $request->validate([
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+        try {
+            $request->validate([
+                'file' => 'required|mimes:jpeg,png,jpg,gif,mp4|max:20480', // 20MB
+            ], [
+                'file.max' => 'Ukuran file tidak boleh melebihi 20 MB.',
+                'file.mimes' => 'File yang diunggah harus berupa gambar atau video dengan ekstensi: jpeg, png, jpg, gif, mp4.',
+            ]);
 
-        $file = $request->file('file');
-        $filename = time() . '.' . $file->getClientOriginalExtension();
-        $path = $file->storeAs('public/posts/content/files', $filename);
+            $file = $request->file('file');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/posts/content/files', $filename);
 
-        return response()->json(['url' => Storage::url($path)]);
+            return response()->json(['url' => Storage::url($path)], 200);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json(['errors' => $e->errors()], 422);
+        } catch (\Exception $e) {
+            return response()->json(['errors' => ['file' => [$e->getMessage()]]], 500);
+        }
     }
 
     public function destroyAllFiles($postId)

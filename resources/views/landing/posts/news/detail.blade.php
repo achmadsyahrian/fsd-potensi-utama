@@ -27,6 +27,16 @@
         </div>
     </div>
 
+    <style>
+        .content video {
+            min-width: 50%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            /* margin: 0 auto; */
+        }
+    </style>
+    
     <section class="post-news-area section-padding-100-0 mb-70">
         <div class="container">
             <div class="row justify-content-center">
@@ -37,7 +47,20 @@
                         <img class="mb-30" src="{{asset($post->thumbnail)}}" style="width:100%; height:400px; object-fit:cover;" alt="{{$post->title}}">
                         @endif
                         <div class="content">
-                            {!! $post->content !!}
+                            {!! preg_replace_callback(
+                                '/<figure[^>]*data-trix-attachment="([^"]+)"[^>]*>.*?<\/figure>/',
+                                function ($matches) {
+                                    $attachment = json_decode(html_entity_decode($matches[1]), true);
+                                    if ($attachment && $attachment['contentType'] === 'video/mp4') {
+                                        return "<video controls>
+                                                    <source src='{$attachment['url']}' type='video/mp4'>
+                                                    Your browser does not support the video tag.
+                                                </video>";
+                                    }
+                                    return $matches[0];
+                                },
+                                $post->content
+                            ) !!}
 
                             @if ($post->files->isNotEmpty())
                                 <h3>File Tambahan</h3>
