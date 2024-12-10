@@ -63,7 +63,10 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
         Route::get('/pengumuman', [AnnouncementController::class, 'index'])->name('announcement.index');
         Route::get('/pengumuman/category/{categorySlug}', [AnnouncementController::class, 'byCategory'])->name('announcement.category');
         Route::get('/pengumuman/tag/{tagSlug}', [AnnouncementController::class, 'byTag'])->name('announcement.tag');
-        Route::get('/pengumuman/{slug}', [AnnouncementController::class, 'show'])->name('announcement.show');
+        Route::get('/pengumuman/detail/{slug}', [AnnouncementController::class, 'show'])->name('announcement.show');
+
+        // Pengumuman Type
+        Route::get('/pengumuman/{typeSlug}', [AnnouncementController::class, 'byType'])->name('announcement.byType');
 
     // Akademik
         // Pengabdian Masyarakat

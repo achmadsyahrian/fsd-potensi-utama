@@ -48,5 +48,30 @@ class CategorySeeder extends Seeder
             'name' => 'Kegiatan Ekstrakurikuler',
             'slug' => 'kegiatan-ekstrakurikuler',
         ]);
+
+        Category::create([
+            'name' => 'Skripsi',
+            'slug' => 'skripsi',
+        ]);
+
+        Category::create([
+            'name' => 'PKL',
+            'slug' => 'pkl',
+        ]);
+
+        Category::create([
+            'name' => 'Perwalian',
+            'slug' => 'perwalian',
+        ]);
+
+        Category::create([
+            'name' => 'Krs',
+            'slug' => 'krs',
+        ]);
+
+        Category::create([
+            'name' => 'Ujian',
+            'slug' => 'ujian',
+        ]);
     }
 }

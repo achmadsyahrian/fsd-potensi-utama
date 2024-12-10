@@ -41,6 +41,8 @@
                                 <h6 class="mb-0">
                                     @if(request()->routeIs('landing.announcement.category'))
                                         By Category : {{ $categorySlug }} 
+                                    @elseif(request()->routeIs('landing.announcement.byType'))
+                                        By : {{ $categorySlug }} 
                                     @elseif(request()->routeIs('landing.announcement.tag'))
                                         By Tag : {{ $tagSlug }}
                                     @elseif(request('s'))

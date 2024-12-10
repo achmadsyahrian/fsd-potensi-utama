@@ -63,8 +63,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $tags = Tag::all();
+        $categories = Category::orderBy('name')->get();
+        $tags = Tag::orderBy('name')->get();
 
         return view('admin.posts.create', compact('categories', 'tags'));
     }
@@ -142,8 +142,8 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::with('tags', 'category')->find($id);
-        $categories = Category::all();
-        $tags = Tag::all();
+        $categories = Category::orderBy('name')->get();
+        $tags = Tag::orderBy('name')->get();
 
         return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }

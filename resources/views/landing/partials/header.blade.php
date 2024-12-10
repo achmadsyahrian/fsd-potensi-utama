@@ -42,7 +42,16 @@
                                 <li><a href="#">Informasi</a>
                                     <ul class="dropdown">
                                         <li><a href="{{route('landing.news.index')}}">Berita</a></li>
-                                        <li><a href="{{route('landing.announcement.index')}}">Pengumuman</a></li>
+                                        <li><a href="#">Pengumuman</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{{route('landing.announcement.index')}}">Semua</a></li>
+                                                <li><a href="{{ route('landing.announcement.byType', 'skripsi') }}">Skripsi</a></li>
+                                                <li><a href="{{ route('landing.announcement.byType', 'pkl') }}">PKL</a></li>
+                                                <li><a href="{{ route('landing.announcement.byType', 'perwalian') }}">Perwalian</a></li>
+                                                <li><a href="{{ route('landing.announcement.byType', 'krs') }}">KRS</a></li>
+                                                <li><a href="{{ route('landing.announcement.byType', 'ujian') }}">Ujian</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="{{route('landing.administration.index')}}">Administrasi</a></li>

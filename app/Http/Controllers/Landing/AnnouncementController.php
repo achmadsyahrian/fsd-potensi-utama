@@ -92,6 +92,11 @@ class AnnouncementController extends Controller
         return $this->index($request, null, $tagSlug);
     }
 
+    public function byType(Request $request, $typeSlug)
+    {
+        // Panggil index dengan typeSlug
+        return $this->index($request, $typeSlug);
+    }
 
     public function show($slug) {
         $title = "Pengumuman";
