@@ -1,5 +1,5 @@
 <div class="post-details-content mb-100">
-    <h1 class="mb-30">Berita Prodi</h1>
+    <h1 class="mb-30">{{__('home.program_news.title')}}</h1>
     <div class="row">
         @foreach ($latestPosts as $post)
             <div class="col-12 col-sm-6 col-lg-4">
@@ -19,10 +19,10 @@
 
                     <!-- Blog Content -->
                     <div class="blog-content">
-                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title"
-                            title="{{ $post->title }}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
-                        <a href="#" class="post-author">By {{ $post->user->name }}</a>
+                        <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -30,12 +30,12 @@
     </div>
 
     @if ($latestPosts->isEmpty())
-        <p >Tidak ada berita <i class="far fa-sad-cry"></i></p>
+        <p >{{__('home.program_news.empty')}} <i class="far fa-sad-cry"></i></p>
     @endif
     
     <div class="col-12">
         <div class="load-more-button text-center">
-            <a href="#" class="btn newsbox-btn">Lihat Selengkapnya</a>
+            <a href="#" class="btn newsbox-btn">{{__('home.program_news.read_more')}}</a>
         </div>
     </div>
 </div>

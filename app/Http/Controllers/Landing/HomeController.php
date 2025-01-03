@@ -12,7 +12,7 @@ class HomeController extends Controller
         // Header Section
         $latestNews = Post::where('type', 'news')
             ->where('is_published', 1)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->take(3)
             ->get();
         
@@ -20,13 +20,13 @@ class HomeController extends Controller
 
         $latestNewsContent = Post::where('type', 'news')
             ->where('is_published', 1)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->take(8)
             ->get();
 
         $latestAnnouncementContent = Post::where('type', 'announcement')
             ->where('is_published', 1)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->take(6)
             ->get();
 

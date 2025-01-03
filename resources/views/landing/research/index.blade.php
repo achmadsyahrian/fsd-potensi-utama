@@ -16,8 +16,8 @@
                 <div class="col-12 col-lg-8">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <p class="tag"><span>Penelitian</span></p>
-                        <p class="post-title">{{env('APP_NAME')}}</p>
+                        <p class="tag"><span>{{__('partials/navbar.navbar.research')}}</span></p>
+                        <p class="post-title">{{__('home.app_name')}}</p>
                         {{-- <div class="d-flex align-items-center">
                             <span class="post-date mr-30">June 20, 2018</span>
                             <span class="post-date">By Michael Smith</span>
@@ -35,9 +35,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
                     <div class="post-details-content mb-100">
-                        <h1 class="mb-30">Penelitian</h1>
-                        <div class="content">
-                            {!! $data->content ?? 'Tidak ada data <i class="far fa-sad-cry"></i>' !!}
+                        <h1 class="mb-30">{{ app()->getLocale() == 'en' ? $data->title_en : $data->title }}</h1>
+                        <div class="content text-justify">
+                            {!! app()->getLocale() == 'en' ? $data->content_en : $data->content ?? 'Tidak ada data <i class="far fa-sad-cry"></i>' !!}
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
 
                         <!-- Latest News Widget -->
                         <div class="single-widget-area news-widget mb-30">
-                            <h4>Berita Terbaru</h4>
+                            <h4>{{__('about/purpose.purpose.news.title')}}</h4>
                             @foreach ($latestPosts as $post)
                                 <div class="single-blog-post d-flex style-4 mb-30">
                                     <div class="blog-thumbnail">
@@ -64,14 +64,16 @@
                                     </div>
                                     <div class="blog-content">
                                         <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
 
                         @if ($latestPosts->isEmpty())
-                            <p class="">Tidak ada berita <i class="far fa-sad-cry"></i></p>
+                            <p class="">{{__('about/purpose.purpose.news.empty')}} <i class="far fa-sad-cry"></i></p>
                         @endif
                     </div>
                 </div>

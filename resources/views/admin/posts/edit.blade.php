@@ -77,7 +77,13 @@
                                         </option>
                                     @endforeach
                                 </select>
-                            </div>                            
+                            </div>                                   
+                        </div>
+                        <div class="row g-3 mt-1">
+                            <div class="col-md">
+                                <div class="form-label">Tgl Post</div>
+                                <x-form-input type="date" name="date" value="{{old('date', $post->date) }}"/>
+                            </div>   
                             <div class="col-md">
                                 <label class="form-label">Tags</label>
                                 <select type="text" class="form-select" name="tags_id[]" id="select-tags" multiple>
@@ -88,7 +94,7 @@
                                         </option>
                                     @endforeach
                                 </select>
-                            </div>                            
+                            </div> 
                         </div>
                         <div class="row g-3 mt-1">
                             <div class="col-md">

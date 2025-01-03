@@ -75,6 +75,12 @@
                                     <p class="text-danger text-sm">{{ $message }}</p>
                                 @enderror
                             </div>
+                        </div>
+                        <div class="row g-3 mt-1">
+                            <div class="col-md">
+                                <div class="form-label">Tgl Post</div>
+                                <x-form-input type="date" name="date" value="{{ old('date', now()->toDateString()) }}"/>
+                            </div>                            
                             <div class="col-md">
                                 <label class="form-label">Tags</label>
                                 <select type="text" class="form-select" name="tags_id[]" placeholder="Pilih tags"

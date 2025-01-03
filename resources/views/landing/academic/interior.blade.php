@@ -19,8 +19,8 @@
                 <div class="col-12 col-lg-8">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <p class="tag"><span>Program Studi</span></p>
-                        <p class="post-title">{{$title}}</p>
+                     <p class="tag"><span>{{__('partials/navbar.navbar.academy')}}</span></p>
+                     <p class="post-title">{{__('partials/navbar.navbar.interior')}}</p>
                         {{-- <div class="d-flex align-items-center">
                             <span class="post-date mr-30">June 20, 2018</span>
                             <span class="post-date">By Michael Smith</span>
@@ -38,7 +38,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-12">
                     <div class="post-details-content mb-100">
-                        <h1 class="mb-30">Visi Misi</h1>
+                        {{-- <h1 class="mb-30">Visi Misi</h1>
                         <h4 class="mb-30">Visi</h4>
                         <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero distinctio aperiam explicabo exercitationem temporibus iure adipisci inventore. Ab, reprehenderit eveniet?".</p>
                         <h4 class="mb-30">Misi</h4>
@@ -55,7 +55,7 @@
                                 <td style="vertical-align: top;">3.</td>
                                 <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quam, atque quo vero harum repudiandae natus eveniet officiis?</td>
                             </tr>
-                        </table>
+                        </table> --}}
                     </div>
 
                     {{-- <div class="post-details-content mb-100">

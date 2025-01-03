@@ -11,31 +11,28 @@
                     <!-- Footer Nav -->
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="{{route('landing.contact')}}">Kontak Fakultas</a></li>
-                            <li><a href="{{route('landing.news.index')}}">Berita</a></li>
-                            <li><a href="{{route('landing.announcement.index')}}">Pengumuman</a></li>
-                            <li><a href="{{route('landing.administration.index')}}">Administrasi</a></li>
+                            <li><a href="{{route('landing.contact')}}">{{__('partials/navbar.navbar.contact')}}</a></li>
+                            <li><a href="{{route('landing.news.index')}}">{{__('partials/navbar.navbar.news')}}</a></li>
+                            <li><a href="{{route('landing.announcement.index')}}">{{__('partials/navbar.navbar.announcement')}}</a></li>
                         </ul>
                     </div>
                     <!-- Social Info -->
                     <div class="footer-social-info">
-                        <a href="https://www.instagram.com/official_upu/" data-toggle="tooltip" data-placement="top" title="instagram">
+                        <a href="https://www.instagram.com/official_upu/" target="_blank" data-toggle="tooltip" data-placement="top" title="instagram">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.facebook.com/potensiutamamedan/about" data-toggle="tooltip" data-placement="top" title="facebook">
+                        <a href="https://www.facebook.com/potensiutamamedan/about" target="_blank" data-toggle="tooltip" data-placement="top" title="facebook">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@official_upu?lang=en" data-toggle="tooltip" data-placement="top" title="tiktok">
+                        <a href="https://www.tiktok.com/@official_upu?lang=en" target="_blank" data-toggle="tooltip" data-placement="top" title="tiktok">
                             <i class="fab fa-tiktok" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.youtube.com/@PotensiUtamaUniversitas" data-toggle="tooltip" data-placement="top" title="youtube">
+                        <a href="https://www.youtube.com/@PotensiUtamaUniversitas" target="_blank" data-toggle="tooltip" data-placement="top" title="youtube">
                             <i class="fa fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
 
-                    <p class="mb-15">
-                        Bergabunglah dengan kami untuk memulai perjalanan akademis Anda di salah satu perguruan tinggi terbaik di Sumatera Utara.
-                    </p>
+                    <p class="mb-15">{{__('partials/footer.footer.content')}}</p>
 
                     <p class="copywrite-text">
                         <a href="http://potensi-utama.ac.id/"> Copyright &copy; 2024 Universitas Potensi Utama. All rights reserved </a>

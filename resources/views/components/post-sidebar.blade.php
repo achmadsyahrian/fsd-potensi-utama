@@ -4,10 +4,10 @@
 
     {{-- Search --}}
     <div class="single-widget-area newsletter-widget mb-30">
-        <h4>Pencarian <i class="fas fa-search"></i></h4>
+        <h4>{{__('home.post_sidebar.search_section.title')}} <i class="fas fa-search"></i></h4>
         <form action="{{route('landing.'. $route .'.index')}}" method="get">
-            <input type="text" name="s" id="nlemail" placeholder="Masukkan judul" value="{{request('s')}}">
-            <button type="submit" class="btn newsbox-btn w-100">Cari</button>
+            <input type="text" name="s" id="nlemail" placeholder="{{__('home.post_sidebar.search_section.input')}}" value="{{request('s')}}">
+            <button type="submit" class="btn newsbox-btn w-100">{{__('home.post_sidebar.search_section.btn')}}</button>
         </form>
     </div>
     
@@ -20,7 +20,7 @@
 
    <!-- Recent Post -->
    <div class="single-widget-area news-widget mb-30">
-       <h4>{{($route == 'news') ? 'Berita' : 'Pengumuman' }} Terbaru</h4>
+        <h4>{{ ($route == 'news') ? __('home.post_sidebar.post_section.news') : __('home.post_sidebar.post_section.announcement') }} {{ __('home.post_sidebar.post_section.latest') }}</h4>
        @foreach ($dataRecent as $post)
            <div class="single-blog-post d-flex style-4 mb-30">
                <!-- Blog Thumbnail -->
@@ -37,10 +37,12 @@
                </div>
 
                <!-- Blog Content -->
-               <div class="blog-content">
-                   <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                   <a href="{{route('landing.' . $route .'.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
-               </div>
+                <div class="blog-content">
+                    <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                        <a href="{{route('landing.' . $route .'.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                        {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                    </a>
+                </div>
            </div>
        @endforeach
    </div>

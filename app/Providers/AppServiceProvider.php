@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $latestAnnouncement = Post::where('type', 'announcement')
                 ->where('is_published', 1)
-                ->orderBy('created_at', 'desc')
+                ->orderBy('date', 'desc')
                 ->take(3)
                 ->get();
 

@@ -19,7 +19,7 @@ class AnnouncementController extends Controller
         $query = Post::with('user', 'category', 'tags')
             ->where('type', 'announcement')
             ->where('is_published', 1)
-            ->orderBy('created_at', 'desc');
+            ->orderBy('date', 'desc');
             
         // Tambahkan filter kategori jika ada
         if ($categorySlug) {
@@ -50,7 +50,7 @@ class AnnouncementController extends Controller
         $dataRecent = Post::with('user', 'category')
             ->where('type', 'announcement')
             ->where('is_published', 1)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('date', 'desc')
             ->take(5)
             ->get();
 

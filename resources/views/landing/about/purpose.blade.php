@@ -16,8 +16,8 @@
                 <div class="col-12 col-lg-8">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <p class="tag"><span>Visi Misi</span></p>
-                        <p class="post-title">{{env('APP_NAME')}}</p>
+                        <p class="tag"><span>{{__('partials/navbar.navbar.purpose')}}</span></p>
+                        <p class="post-title">{{__('home.app_name')}}</p>
                         {{-- <div class="d-flex align-items-center">
                             <span class="post-date mr-30">June 20, 2018</span>
                             <span class="post-date">By Michael Smith</span>
@@ -35,24 +35,19 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
                     <div class="post-details-content mb-100">
-                        <h1 class="mb-30">Visi & Misi</h1>
-                        <h4 class="mb-30">Visi</h4>
-                        <p>"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum optio repellendus dolore, quam perferendis quis culpa eum excepturi aliquam similique. Minus at voluptate sequi? Impedit atque nostrum sit magnam? Alias!".</p>
-                        <h4 class="mb-30">Misi</h4>
+                        {{-- <h1 class="mb-30">{{__('about/purpose.purpose.title')}}</h1>
+                        <h4 class="mb-30">{{__('about/purpose.purpose.subtitle_vision')}}</h4>
+                        <p>{{__('about/purpose.purpose.description_vision')}}</p>
+
+                        <h4 class="mb-30">{{__('about/purpose.purpose.subtitle_mission')}}</h4>
                         <table class="text-secondary mb-30" style="border-collapse: collapse; width: 100%;">
-                            <tr>
-                                <td style="width: 3%; vertical-align: top;">1.</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus odit sapiente iste?</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">2.</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, necessitatibus!</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">3.</td>
-                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, veniam!</td>
-                            </tr>
-                        </table>
+                            @foreach (trans('about/purpose.purpose.description_mission') as $key => $mission)
+                                <tr>
+                                    <td style="width: 3%; vertical-align: top;">{{ $key }}</td>
+                                    <td>{{ $mission }}</td>
+                                </tr>
+                            @endforeach
+                        </table> --}}
                     </div>
                 </div>
 
@@ -62,7 +57,7 @@
 
                         <!-- Latest News Widget -->
                         <div class="single-widget-area news-widget mb-30">
-                            <h4>Berita Terbaru</h4>
+                            <h4>{{__('about/purpose.purpose.news.title')}}</h4>
                             @foreach ($latestPosts as $post)
                                 <div class="single-blog-post d-flex style-4 mb-30">
                                     <div class="blog-thumbnail">
@@ -77,14 +72,16 @@
                                         </a>
                                     </div>
                                     <div class="blog-content">
-                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                        <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                         @if ($latestPosts->isEmpty())
-                            <p >Tidak ada berita <i class="far fa-sad-cry"></i></p>
+                            <p >{{__('about/purpose.purpose.news.empty')}} <i class="far fa-sad-cry"></i></p>
                         @endif
                     </div>
                 </div>

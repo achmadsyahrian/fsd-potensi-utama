@@ -23,7 +23,7 @@ class CommunityController extends Controller
         $query = Post::with('user', 'category', 'tags')
             ->where('type', 'community_service')
             ->where('is_published', 1)
-            ->orderBy('created_at', 'desc');
+            ->orderBy('date', 'desc');
 
         // Tambahkan filter kategori terlebih dahulu
         if ($category) {

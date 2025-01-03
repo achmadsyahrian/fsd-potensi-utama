@@ -18,8 +18,8 @@
                 <div class="col-12 col-lg-8">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <p class="tag"><span>Kontak Fakultas</span></p>
-                        <p class="post-title">{{ env('APP_NAME') }}</p>
+                        <p class="tag"><span>{{__('partials/navbar.navbar.contact')}}</span></p>
+                        <p class="post-title">{{__('home.app_name')}}</p>
                         {{-- <div class="d-flex align-items-center">
                             <span class="post-date mr-30">June 20, 2018</span>
                             <span class="post-date">By Michael Smith</span>

@@ -14,9 +14,9 @@
                 <div class="col-12 col-lg-9">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <h1 class="tag"><span>Pengumuman</span></h1>
-                        <a href="#" class="post-title">{{env('APP_NAME')}}</a>
-                        <p>Selamat datang di halaman Berita dan Informasi {{env('APP_NAME')}} Universitas Potensi Utama. Di sini, Anda dapat menemukan berbagai update terkini, mulai dari kegiatan akademik, prestasi mahasiswa. Temukan informasi terbaru mengenai inovasi, kerjasama, dan program-program unggulan yang menjadi bagian dari komitmen kami untuk terus maju dalam dunia pendidikan.</p>
+                        <p class="tag"><span>{{ __('partials/navbar.navbar.announcement') }}</span></p>
+                        <a href="#" class="post-title">{{ __('home.app_name') }}</a>
+                        <p>{{__('posts/posts.posts.header_description')}}</p>
                         {{-- <span class="post-date">June 20, 2018</span> --}}
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <!-- Intro News Filter -->
                         <div class="intro-news-filter d-flex justify-content-between">
                             <div class="d-flex align-items-center">
-                                <a class="text-warning ml-2" href="{{ route('landing.announcement.index') }}" title="Bersihkan Pencarian">
+                                <a class="text-warning ml-2" href="{{ route('landing.announcement.index') }}" title="{{__('posts/posts.posts.content.clear_search')}}">
                                     <i class="fas fa-redo"></i>
                                 </a>
                                 
@@ -46,9 +46,9 @@
                                     @elseif(request()->routeIs('landing.announcement.tag'))
                                         By Tag : {{ $tagSlug }}
                                     @elseif(request('s'))
-                                        Cari : {{ request('s')}}
+                                        {{__('posts/posts.posts.content.search')}} : {{ request('s')}}
                                     @else
-                                        Semua
+                                        {{__('posts/posts.posts.content.all')}}
                                     @endif
                                 </h6>
                             </div>
@@ -83,10 +83,12 @@
                                                 
                                                     <!-- Blog Content -->
                                                     <div class="blog-content">
-                                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                        <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-title" title="{{ $post->title }}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                        <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                                                        <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                                                        </a>
                                                         <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-author ">By {{ $post->user->name }}</a>
-                                                        <x-filtered-content :content="$post->content" class="mt-4" />
+                                                        <x-filtered-content :content="app()->getLocale() == 'en' ? $post->content_en : $post->content" class="mt-4" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -109,8 +111,10 @@
     
                                                     <!-- Blog Content -->
                                                     <div class="blog-content">
-                                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                        <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                        <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                                                        <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,7 +128,7 @@
                         @if (!$data->isEmpty())
                             <x-landing-pagination :data="$data"></x-landing-pagination>
                         @else
-                            <p class="text-center">Tidak ada pengumuman <i class="far fa-sad-cry"></i></p>
+                            <p class="text-center">{{__('posts/posts.posts.content.empty')}} <i class="far fa-sad-cry"></i></p>
                         @endif
                     </div>
                 </div>

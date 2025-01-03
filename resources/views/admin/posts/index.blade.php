@@ -110,7 +110,7 @@
                                     </td>
                                     <td>
                                         <span title="Diupdate pada {{ \Carbon\Carbon::parse($item->updated_at)->format('j F, Y') }}" data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom">{{ \Carbon\Carbon::parse($item->created_at)->format('j F, Y') }}</span>
+                                            data-bs-placement="bottom">{{ \Carbon\Carbon::parse($item->date)->format('j F, Y') }}</span>
                                     </td>
                                     <td class="text-center">
                                         <i class="fas fa-eye text-secondary"></i>

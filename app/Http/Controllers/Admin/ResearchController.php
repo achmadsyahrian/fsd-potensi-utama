@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Research;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class ResearchController extends Controller
 {
@@ -73,6 +74,9 @@ class ResearchController extends Controller
         // Update data post
         $research->title = $request->input('title');
         $research->content = $request->input('content');
+
+        $research->title_en = GoogleTranslate::trans($request->input('title'), 'en');
+        $research->content_en = $this->translateWithHtmlTags($request->input('content'), 'en');
         $research->save();
 
         return redirect()->route('admin.researches.index')->with('success', "Penelitian '{$oldTitle}' berhasil diperbarui!");
@@ -90,4 +94,25 @@ class ResearchController extends Controller
 
         return response()->json(['url' => Storage::url($path)]);
     }
+
+    private function translateWithHtmlTags($content, $targetLang = 'en') {
+        // Menggunakan regex untuk memisahkan teks dan tag HTML
+        preg_match_all('/<[^>]+>|[^<]+/', $content, $matches);
+    
+        $translatedContent = '';
+    
+        foreach ($matches[0] as $part) {
+            // Jika bagian ini adalah teks (bukan tag HTML)
+            if (preg_match('/^[^<]+$/', $part)) {
+                // Terjemahkan hanya teks
+                $translatedContent .= GoogleTranslate::trans($part, $targetLang);
+            } else {
+                // Jika ini adalah tag HTML, langsung tambahkan tanpa terjemahan
+                $translatedContent .= $part;
+            }
+        }
+    
+        return $translatedContent;
+    }
+    
 }

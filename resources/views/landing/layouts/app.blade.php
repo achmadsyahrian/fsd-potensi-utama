@@ -53,6 +53,8 @@
     <script src="{{asset('landing/assets/js/plugins/plugins.js')}}"></script>
     <!-- Active js -->
     <script src="{{asset('landing/assets/js/active.js')}}"></script>
+    {{-- My Custom Js --}}
+    <script src="{{asset('landing/assets/script.js')}}"></script>
 </body>
 
 </html>

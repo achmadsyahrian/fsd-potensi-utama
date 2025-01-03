@@ -53,7 +53,7 @@
                                     <div class="datagrid-title">Dibuat pada</div>
                                     <div class="datagrid-content">
                                         <span class="status status-green">
-                                            {{ \Carbon\Carbon::parse($post->created_at)->format('M d, Y') ?? '--' }}
+                                            {{ \Carbon\Carbon::parse($post->date)->format('M d, Y') ?? '--' }}
                                         </span>
                                     </div>
                                 </div>

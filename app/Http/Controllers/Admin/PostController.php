@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class PostController extends Controller
 {
@@ -39,7 +40,7 @@ class PostController extends Controller
             ->when($searchAuthor, function ($query, $searchAuthor) {
                 return $query->where('user_id', $searchAuthor);
             })
-            ->orderBy('created_at', 'desc');
+            ->orderBy('date', 'desc');
 
         // Tambahkan parameter pencarian ke pagination
         $data = $query->paginate(10)->appends([
@@ -98,12 +99,18 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->input('title');
         $post->slug = $request->input('slug');
+        $post->date = $request->input('date');
         $post->category_id = $request->input('category_id');
         $post->thumbnail = $thumbnailUrl;
         $post->content = $request->input('content');
         $post->is_published = $request->input('is_published', 0);
         $post->type = $request->input('type');
         $post->user_id = auth()->user()->id;
+
+        // Terjemahkan judul dan konten ke dalam bahasa lain (misalnya, Inggris)
+        $post->title_en = GoogleTranslate::trans($request->input('title'), 'en');
+        $post->content_en = $this->translateWithHtmlTags($request->input('content'), 'en');
+        
         $post->save();
 
         // Simpan tags
@@ -188,11 +195,17 @@ class PostController extends Controller
         // Update data post
         $post->title = $request->input('title');
         $post->slug = $request->input('slug');
+        $post->date = $request->input('date');
         $post->category_id = $request->input('category_id');
         $post->content = $request->input('content');
         $post->is_published = $request->input('is_published', 0);
         $post->type = $request->input('type');
         $post->user_id = $post->user_id;
+
+        // Terjemahkan judul dan konten ke dalam bahasa lain (misalnya, Inggris)
+        $post->title_en = GoogleTranslate::trans($request->input('title'), 'en');
+        $post->content_en = $this->translateWithHtmlTags($request->input('content'), 'en');
+        
         $post->save();
 
         // Sinkronisasi tags
@@ -317,5 +330,25 @@ class PostController extends Controller
         }
 
         return redirect()->back()->with('success', 'Files tambahan berhasil dihapus.');
+    }
+
+    private function translateWithHtmlTags($content, $targetLang = 'en') {
+        // Menggunakan regex untuk memisahkan teks dan tag HTML
+        preg_match_all('/<[^>]+>|[^<]+/', $content, $matches);
+    
+        $translatedContent = '';
+    
+        foreach ($matches[0] as $part) {
+            // Jika bagian ini adalah teks (bukan tag HTML)
+            if (preg_match('/^[^<]+$/', $part)) {
+                // Terjemahkan hanya teks
+                $translatedContent .= GoogleTranslate::trans($part, $targetLang);
+            } else {
+                // Jika ini adalah tag HTML, langsung tambahkan tanpa terjemahan
+                $translatedContent .= $part;
+            }
+        }
+    
+        return $translatedContent;
     }
 }

@@ -15,10 +15,10 @@
                 <div class="col-12 col-lg-12">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <p class="tag"><span>Pengumuman</span></p>
-                        <h1 class="post-title detail-title">{{$post->title}}</h1>
+                        <p class="tag"><span>{{ __('partials/navbar.navbar.news') }}</span></p>
+                        <p class="post-title detail-title">{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}</p>
                         <div class="d-flex align-items-center">
-                            <span class="post-date mr-30">{{ $post->created_at->format('M j, Y') }}</span>
+                            <span class="post-date mr-30">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
                             <span class="post-date">By {{$post->user->name}}</span>
                         </div>
                     </div>
@@ -59,11 +59,11 @@
                                     }
                                     return $matches[0];
                                 },
-                                $post->content
+                                app()->getLocale() == 'en' ? $post->content_en : $post->content
                             ) !!}
 
                             @if ($post->files->isNotEmpty())
-                                <h3>File Tambahan</h3>
+                                <h3>{{__('posts/posts.detail.other_files')}}</h3>
                                 <ul>
                                     @foreach($post->files as $file)
                                         <li>
@@ -80,7 +80,7 @@
                                     {{ $tag->name }}
                                 </a>
                             @empty
-                                <a>Tidak ada tags</a>
+                                <a>{{__('posts/posts.detail.empty_tag')}}</a>
                             @endforelse
                         </div>
                     </div>
@@ -94,13 +94,13 @@
         </div>
     </section>
     
-    <script>
+    {{-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             var content = document.querySelector('.content');
             if (content) {
                 content.innerHTML = content.innerHTML.replace(/<strong>(.*?)<\/strong>/g, '<h3>$1</h3>');
             }
         });
-    </script>
+    </script> --}}
     
 @endsection
